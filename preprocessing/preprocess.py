@@ -31,7 +31,7 @@ def process_file(filepath, output_h5_path):
     """
     df = pd.read_csv(filepath)
     profile = df.iloc[:, [4, 5, 6]].to_numpy()
-    cnn_length = 700
+    cnn_length = 2000
     axes_permutations = list(itertools.permutations([0, 1, 2]))
     axes_labels = ["x", "y", "z"]
     target_idx = cnn_length // 2
