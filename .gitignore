@@ -1,5 +1,6 @@
 /data/impact_data_raw
 impact_data_augmented.h5
+test.h5
 /.venv
 /__pycache__
 *.pyc
@@ -7,3 +8,4 @@ impact_data_augmented.h5
 /depreciated
 /pred_true
 .DS_Store
+data/impact_data
