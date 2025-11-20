@@ -9,3 +9,4 @@ test.h5
 /pred_true
 .DS_Store
 data/impact_data
+/data

@@ -62,8 +62,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process impact data for CNN input")
     parser.add_argument("filepath", type=str)
     parser.add_argument(
-        "--output_h5", type=str, default="data/impact_data_augmented.h5"
+        "--output_h5", type=str, default=None
     )
 
     args = parser.parse_args()
-    process_file(args.filepath, args.output_h5)
+    
+    output_h5_path = args.output_h5
+    if output_h5_path is None:
+        base_name = os.path.basename(args.filepath)
+        if "_g" in base_name:
+            output_h5_path = "data/impact_data_game_augmented.h5"
+        elif "_tw" in base_name:
+            output_h5_path = "data/impact_data_training_augmented.h5"
+        else:
+            output_h5_path = "data/impact_data_augmented.h5"
+
+    process_file(args.filepath, output_h5_path)
