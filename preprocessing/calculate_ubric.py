@@ -25,7 +25,7 @@ def ubric_term(wp, ap):
         float: UBrIC term for the axis.
     """
     ratio = ap / wp
-    return (wp + ap) * math.exp(-(ratio))
+    return wp + (ap - wp) * math.exp(-(ratio))
 
 def acceleration_to_velocity(acc, time):
     """
