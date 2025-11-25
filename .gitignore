@@ -10,3 +10,4 @@ test.h5
 .DS_Store
 data/impact_data
 /data
+read_h5_scores.py

@@ -53,10 +53,9 @@ def compute_ubric(acc_values, vel_values):
     """
 
     # Calculate peak values for each axis
-    a_vals = np.max(np.abs(acc_values))
-
+    a_vals = np.max(np.abs(acc_values), axis=1)
     # Calculate peak-to-peak velocity for each axis. Equation 8 in the paper
-    w_vals = np.max(vel_values) - np.min(vel_values)
+    w_vals = np.max(vel_values, axis=1) - np.min(vel_values, axis=1)
 
     # Normalize by critical values
     w_prime = w_vals / w_cr
