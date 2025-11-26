@@ -10,8 +10,8 @@ import math
 from scipy import integrate
 
 # Critical values for UBrIC calculation (from Table 4 in the reference paper)
-w_cr = np.array([211.0, 171.0, 115.0])          # rad/s
-a_cr = np.array([20e3, 10.3e3, 7.76e3])         # rad/s²
+w_cr = np.array([211.0, 171.0, 115.0])          
+a_cr = np.array([20e3, 10.3e3, 7.76e3])         
 
 def ubric_term(wp, ap):
     """
