@@ -45,7 +45,7 @@ def process_file(filepath, output_h5_path):
     group_name, _ = os.path.splitext(base_name)
 
     # Get metadata prediction and ubric score
-    pred, impact_location, ubric_hitiq = get_metadata(filepath)
+    pred, impact_location = get_metadata(filepath)
     ubric_score = calculate_ubric_from_profile(profile, time)
     with h5py.File(output_h5_path, "a") as hf:
         if group_name in hf:
@@ -54,7 +54,6 @@ def process_file(filepath, output_h5_path):
         group.attrs["pred"] = pred
         group.attrs["impact_location"] = impact_location
         group.attrs["ubric_score"] = ubric_score
-        group.attrs["ubric_hitiq"] = ubric_hitiq
         print(f"Processing {filepath}")
 
         for i, perm in enumerate(axes_permutations):
